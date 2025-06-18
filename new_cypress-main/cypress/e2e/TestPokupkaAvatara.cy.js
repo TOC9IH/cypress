@@ -14,6 +14,7 @@ describe('Проверка покупки нового аватара', function
          cy.get('.card_date').type('1226');                           // вводим срок действия карты
          cy.get('.card_name').type('NAME');                           // вводим имя владельца действия карты
          cy.get('.style_1_base_button_payment_body > .style_1_base_button_payment').click();     // нажимаем кнопку Оплатить
+         cy.wait(5000);
          cy.get('.threeds_number').type('56456');                            // вводим код подтверждения СМС
          cy.get('.style_1_base_button_payment_body > .style_1_base_button_payment').click();   // нажимаем кнопку Оплатить
          cy.contains('Покупка прошла успешно').should('be.visible');     // проверяем наличие и видимость сообщения об успешной покупке
